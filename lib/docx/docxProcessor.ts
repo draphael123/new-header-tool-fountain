@@ -11,6 +11,7 @@ import {
   HeadingLevel,
 } from 'docx';
 import { DocumentType, LETTERHEAD_CONFIG } from '../constants';
+import { svgToArrayBuffer } from '../utils/svgToPng';
 
 export async function extractTextFromDocx(file: File): Promise<string> {
   const arrayBuffer = await file.arrayBuffer();
@@ -24,20 +25,17 @@ export async function createDocxWithLetterhead(
 ): Promise<Blob> {
   const config = LETTERHEAD_CONFIG[documentType];
 
-  // Load letterhead images
-  const [headerResponse, footerResponse] = await Promise.all([
-    fetch(config.headerImage),
-    fetch(config.footerImage),
-  ]);
-
+  // Convert SVG letterheads to PNG at runtime
   let headerBuffer: ArrayBuffer | null = null;
   let footerBuffer: ArrayBuffer | null = null;
 
-  if (headerResponse.ok) {
-    headerBuffer = await headerResponse.arrayBuffer();
-  }
-  if (footerResponse.ok) {
-    footerBuffer = await footerResponse.arrayBuffer();
+  try {
+    [headerBuffer, footerBuffer] = await Promise.all([
+      svgToArrayBuffer(config.headerImage, 600, 70),
+      svgToArrayBuffer(config.footerImage, 600, 50),
+    ]);
+  } catch (error) {
+    console.error('Failed to convert letterhead images:', error);
   }
 
   // Parse HTML content to document elements

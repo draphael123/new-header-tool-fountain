@@ -1,5 +1,6 @@
 import { PDFDocument, rgb } from 'pdf-lib';
-import { DocumentType, LETTERHEAD_CONFIG } from '../constants';
+import { DocumentType, LETTERHEAD_CONFIG, PAGE_DIMENSIONS } from '../constants';
+import { getLetterheadPng } from '../utils/svgToPng';
 
 interface ProcessOptions {
   documentType: DocumentType;
@@ -22,23 +23,19 @@ export async function processPdfWithLetterhead(
   const srcDoc = await PDFDocument.load(pdfBytes);
   const pdfDoc = await PDFDocument.create();
 
-  // Load letterhead images
-  const [headerResponse, footerResponse] = await Promise.all([
-    fetch(config.headerImage),
-    fetch(config.footerImage),
-  ]);
+  // Calculate image dimensions based on page size
+  const pageWidth = PAGE_DIMENSIONS.WIDTH_PT;
+  const headerHeight = Math.round((config.headerHeightPercent / 100) * PAGE_DIMENSIONS.HEIGHT_PT);
+  const footerHeight = Math.round((config.footerHeightPercent / 100) * PAGE_DIMENSIONS.HEIGHT_PT);
 
-  if (!headerResponse.ok || !footerResponse.ok) {
-    throw new Error('Failed to load letterhead images');
-  }
-
+  // Convert SVG letterheads to PNG at runtime
   const [headerBytes, footerBytes] = await Promise.all([
-    headerResponse.arrayBuffer(),
-    footerResponse.arrayBuffer(),
+    getLetterheadPng(config.headerImage, pageWidth, headerHeight),
+    getLetterheadPng(config.footerImage, pageWidth, footerHeight),
   ]);
 
-  const headerImage = await pdfDoc.embedPng(new Uint8Array(headerBytes));
-  const footerImage = await pdfDoc.embedPng(new Uint8Array(footerBytes));
+  const headerImage = await pdfDoc.embedPng(headerBytes);
+  const footerImage = await pdfDoc.embedPng(footerBytes);
 
   // Check for existing letterhead
   const hasExistingLetterhead = await detectExistingLetterhead(srcDoc);
