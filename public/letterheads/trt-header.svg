@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 612 95" width="612" height="95">
+  <!-- Background -->
+  <rect width="612" height="95" fill="white"/>
+
+  <!-- Logo area -->
+  <g transform="translate(40, 15)">
+    <!-- Fountain leaf/drop icon -->
+    <path d="M0 45 Q15 0 30 25 Q45 50 30 70 Q15 90 0 70 Q-15 50 0 25 Z"
+          fill="#0A1628" transform="scale(0.5)"/>
+    <path d="M20 35 Q30 10 40 30 Q50 50 40 65 Q30 80 20 65 Q10 50 20 30 Z"
+          fill="#00B5B8" transform="scale(0.5)"/>
+    <!-- Fountain text -->
+    <text x="40" y="35" font-family="Arial, sans-serif" font-size="28" font-weight="500" fill="#0A1628">Fountain</text>
+  </g>
+
+  <!-- Teal accent line -->
+  <rect x="180" y="45" width="400" height="3" fill="#00B5B8"/>
+</svg>

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 612 79" width="612" height="79">
+  <!-- Background -->
+  <rect width="612" height="79" fill="white"/>
+
+  <!-- Pink accent line at top -->
+  <rect x="0" y="0" width="612" height="3" fill="#E91E8C"/>
+
+  <!-- Call section -->
+  <g transform="translate(50, 25)">
+    <circle cx="15" cy="20" r="15" fill="#E91E8C" opacity="0.15"/>
+    <circle cx="15" cy="20" r="12" fill="none" stroke="#E91E8C" stroke-width="1.5"/>
+    <rect x="10" y="15" width="10" height="10" rx="2" fill="none" stroke="#E91E8C" stroke-width="1"/>
+    <text x="40" y="15" font-family="Arial, sans-serif" font-size="10" font-weight="600" fill="#333">Call</text>
+    <text x="40" y="30" font-family="Arial, sans-serif" font-size="10" fill="#666">(213) 237-1454</text>
+  </g>
+
+  <!-- Message section -->
+  <g transform="translate(230, 25)">
+    <circle cx="15" cy="20" r="15" fill="none" stroke="#333" stroke-width="1.5"/>
+    <path d="M5 20 h20 M15 10 v20 M8 13 l14 14 M22 13 l-14 14" stroke="#333" stroke-width="1" fill="none"/>
+    <text x="40" y="15" font-family="Arial, sans-serif" font-size="10" font-weight="600" fill="#333">Message</text>
+    <text x="40" y="30" font-family="Arial, sans-serif" font-size="10" fill="#666">support@fountain.net</text>
+  </g>
+
+  <!-- Office Address section -->
+  <g transform="translate(430, 25)">
+    <circle cx="15" cy="20" r="3" fill="#E91E8C"/>
+    <path d="M15 8 L15 25 M10 15 L15 8 L20 15" stroke="#E91E8C" stroke-width="2" fill="none"/>
+    <text x="40" y="15" font-family="Arial, sans-serif" font-size="10" font-weight="600" fill="#333">Office Address</text>
+    <text x="40" y="28" font-family="Arial, sans-serif" font-size="9" fill="#666">2064 Park Street,</text>
+    <text x="40" y="40" font-family="Arial, sans-serif" font-size="9" fill="#666">Jacksonville, FL 32204</text>
+  </g>
+</svg>
