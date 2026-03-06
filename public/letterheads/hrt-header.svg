@@ -1,35 +1,49 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 612 127" width="612" height="127">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 612 130" width="612" height="130">
   <!-- Background -->
-  <rect width="612" height="127" fill="white"/>
+  <rect width="612" height="130" fill="white"/>
 
   <!-- Decorative corner graphic -->
   <defs>
-    <linearGradient id="pinkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#E91E8C;stop-opacity:0.3"/>
-      <stop offset="50%" style="stop-color:#FF6B35;stop-opacity:0.4"/>
-      <stop offset="100%" style="stop-color:#9B59B6;stop-opacity:0.3"/>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E91E8C;stop-opacity:0.9"/>
+      <stop offset="50%" style="stop-color:#FF6B35;stop-opacity:0.8"/>
+      <stop offset="100%" style="stop-color:#9B59B6;stop-opacity:0.7"/>
+    </linearGradient>
+    <linearGradient id="grad2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF69B4;stop-opacity:0.6"/>
+      <stop offset="50%" style="stop-color:#FFB347;stop-opacity:0.7"/>
+      <stop offset="100%" style="stop-color:#DDA0DD;stop-opacity:0.5"/>
+    </linearGradient>
+    <linearGradient id="pinkBar" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#9B2D7B"/>
+      <stop offset="50%" style="stop-color:#E91E8C"/>
+      <stop offset="100%" style="stop-color:#FF69B4"/>
     </linearGradient>
   </defs>
-  <ellipse cx="580" cy="30" rx="100" ry="80" fill="url(#pinkGrad)" opacity="0.5"/>
-  <ellipse cx="540" cy="50" rx="60" ry="50" fill="#E91E8C" opacity="0.2"/>
 
-  <!-- Logo area -->
-  <g transform="translate(40, 20)">
-    <!-- Fountain leaf/drop icon -->
-    <path d="M0 45 Q15 0 30 25 Q45 50 30 70 Q15 90 0 70 Q-15 50 0 25 Z"
-          fill="#0A1628" transform="scale(0.5)"/>
-    <path d="M20 35 Q30 10 40 30 Q50 50 40 65 Q30 80 20 65 Q10 50 20 30 Z"
-          fill="#E91E8C" transform="scale(0.5)"/>
-    <!-- Fountain text -->
-    <text x="40" y="35" font-family="Arial, sans-serif" font-size="28" font-weight="500" fill="#0A1628">Fountain</text>
+  <!-- Abstract decorative shapes in top right -->
+  <ellipse cx="580" cy="25" rx="90" ry="70" fill="url(#grad1)" opacity="0.7"/>
+  <ellipse cx="550" cy="45" rx="60" ry="50" fill="url(#grad2)" opacity="0.6"/>
+  <ellipse cx="610" cy="60" rx="40" ry="55" fill="#E91E8C" opacity="0.3"/>
+  <ellipse cx="520" cy="20" rx="35" ry="30" fill="#FFB347" opacity="0.5"/>
+  <ellipse cx="590" cy="80" rx="30" ry="25" fill="#DDA0DD" opacity="0.4"/>
+
+  <!-- Fountain Logo - Stylized leaf/water drops in pink -->
+  <g transform="translate(45, 15)">
+    <!-- Dark navy outer leaf -->
+    <path d="M0 55 C0 25, 15 0, 15 0 C15 0, 30 25, 30 55 C30 75, 15 85, 15 85 C15 85, 0 75, 0 55 Z"
+          fill="#0B1C39" transform="rotate(-15, 15, 42)"/>
+    <!-- Pink middle leaf -->
+    <path d="M18 50 C18 28, 30 8, 30 8 C30 8, 42 28, 42 50 C42 66, 30 74, 30 74 C30 74, 18 66, 18 50 Z"
+          fill="#E91E8C" transform="rotate(-5, 30, 40)"/>
+    <!-- Light pink small leaf -->
+    <path d="M36 45 C36 30, 44 15, 44 15 C44 15, 52 30, 52 45 C52 56, 44 62, 44 62 C44 62, 36 56, 36 45 Z"
+          fill="#FF69B4" transform="rotate(5, 44, 38)"/>
   </g>
 
-  <!-- Pink accent bar -->
-  <defs>
-    <linearGradient id="pinkBar" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#E91E8C"/>
-      <stop offset="100%" style="stop-color:#FF6B9D"/>
-    </linearGradient>
-  </defs>
-  <rect x="0" y="75" width="300" height="8" fill="url(#pinkBar)"/>
+  <!-- Fountain Text -->
+  <text x="115" y="62" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="400" fill="#0B1C39" letter-spacing="1">Fountain</text>
+
+  <!-- Pink gradient bar -->
+  <rect x="0" y="100" width="320" height="10" fill="url(#pinkBar)"/>
 </svg>

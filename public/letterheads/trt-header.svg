@@ -2,17 +2,22 @@
   <!-- Background -->
   <rect width="612" height="95" fill="white"/>
 
-  <!-- Logo area -->
-  <g transform="translate(40, 15)">
-    <!-- Fountain leaf/drop icon -->
-    <path d="M0 45 Q15 0 30 25 Q45 50 30 70 Q15 90 0 70 Q-15 50 0 25 Z"
-          fill="#0A1628" transform="scale(0.5)"/>
-    <path d="M20 35 Q30 10 40 30 Q50 50 40 65 Q30 80 20 65 Q10 50 20 30 Z"
-          fill="#00B5B8" transform="scale(0.5)"/>
-    <!-- Fountain text -->
-    <text x="40" y="35" font-family="Arial, sans-serif" font-size="28" font-weight="500" fill="#0A1628">Fountain</text>
+  <!-- Fountain Logo - Stylized leaf/water drops -->
+  <g transform="translate(45, 12)">
+    <!-- Dark navy outer leaf -->
+    <path d="M0 55 C0 25, 15 0, 15 0 C15 0, 30 25, 30 55 C30 75, 15 85, 15 85 C15 85, 0 75, 0 55 Z"
+          fill="#0B1C39" transform="rotate(-15, 15, 42)"/>
+    <!-- Teal middle leaf -->
+    <path d="M18 50 C18 28, 30 8, 30 8 C30 8, 42 28, 42 50 C42 66, 30 74, 30 74 C30 74, 18 66, 18 50 Z"
+          fill="#00B5B8" transform="rotate(-5, 30, 40)"/>
+    <!-- Light teal small leaf -->
+    <path d="M36 45 C36 30, 44 15, 44 15 C44 15, 52 30, 52 45 C52 56, 44 62, 44 62 C44 62, 36 56, 36 45 Z"
+          fill="#5DD3D5" transform="rotate(5, 44, 38)"/>
   </g>
 
+  <!-- Fountain Text -->
+  <text x="115" y="58" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="400" fill="#0B1C39" letter-spacing="1">Fountain</text>
+
   <!-- Teal accent line -->
-  <rect x="180" y="45" width="400" height="3" fill="#00B5B8"/>
+  <rect x="260" y="48" width="320" height="3" fill="#00B5B8"/>
 </svg>
